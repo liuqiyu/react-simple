@@ -1,0 +1,28 @@
+.home {
+        padding: 40px 0;
+}
+
+.img {
+        margin: 0 auto;
+        width: 400px;
+        height: 400px;
+        padding-top: 58.5px;
+        animation: rotate infinite 3s;
+        -webkit-animation: rotate infinite 3s; /* Safari 与 Chrome */
+}
+
+.img > img {
+        width: 100%;
+}
+
+@keyframes rotate
+{
+        from {transform: rotateX(0);}
+        to {transform: rotateX(360deg);}
+}
+
+@-webkit-keyframes rotate /* Safari 与 Chrome */
+{
+        from {transform: rotateX(0);}
+        to {transform: rotateX(360deg);}
+}
