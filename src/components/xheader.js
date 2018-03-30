@@ -26,6 +26,18 @@ class XHeader extends React.Component {
             <li className="nav-item">
               <Link to='about'>关于我们</Link>
             </li>
+            <li className="nav-item">
+              <Link to='clock'>时钟</Link>
+            </li>
+            <li className="nav-item">
+              <Link to='toggle'>开关</Link>
+            </li>
+            <li className="nav-item">
+              <Link to='status'>注销登录</Link>
+            </li>
+            <li className="nav-item">
+              <Link to='form'>表单</Link>
+            </li>
           </ul>
         </div>
       </header>

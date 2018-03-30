@@ -34,18 +34,25 @@ class List extends React.Component {
   }
   
   render() {
-    return (
-      <div className="x-list">
-        <ul>
-          {
-            this.props.data.map((item, index) => {
-              return <li className="x-item" key={item.id}>{index + 1}、{item.value}</li>
-            })
-          }
-        </ul>
-        <div>暂无数据。。。</div>
-      </div>
-    )
+    if (this.props.data.length > 0) {
+      return (
+        <div className="x-list">
+          <ul>
+            {
+              this.props.data.map((item, index) => {
+                return <li className="x-item" key={item.id}>{index + 1}、{item.value}</li>
+              })
+            }
+          </ul>
+        </div>
+      )
+    } else {
+      return (
+        <div className="x-list">
+          <h2>无数据。。。</h2>
+        </div>
+      )
+    }
   }
 }
 
