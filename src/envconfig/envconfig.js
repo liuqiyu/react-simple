@@ -7,6 +7,3 @@ if(process.env.NODE_ENV === 'development'){
 }else{
   baseURL = 'www.production.com';
 }
-
-
-export default {baseURL}
