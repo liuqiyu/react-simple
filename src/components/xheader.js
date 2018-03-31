@@ -18,7 +18,7 @@ class XHeader extends React.Component {
         <div className="common-width x-h-content">
           <ul>
             <li className="nav-item">
-              <Link to='home'>首页</Link>
+              <Link to=''>首页</Link>
             </li>
             <li className="nav-item">
               <Link to='dataList'>数据列表</Link>

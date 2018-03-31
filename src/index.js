@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/reset.css';
 import './style/base.css';
-import App from './App';
+import App from './containers/app/App';
 import registerServiceWorker from './registerServiceWorker';
 
 console.log(process.env.NODE_ENV)
