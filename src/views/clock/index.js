@@ -13,7 +13,7 @@ class Clock extends React.Component {
     }
   }
   
-  componentDidMount() {
+componentDidMount() {
     this.timer = setInterval(() => {
       this.setState({
         time: new Date(),
