@@ -47,6 +47,10 @@ const Form = Loadable({
   loader: () => import('../../views/form/index'),
   loading: loadingComponent
 });
+const Counter = Loadable({
+  loader: () => import('../../views/counter/index'),
+  loading: loadingComponent
+});
 
 // 登录验证
 function requireAuth(Layout, props) {
@@ -88,6 +92,7 @@ class App extends Component {
                         <Route path='/toggle' component={Toggle}></Route>
                         <Route path='/status' component={Status}></Route>
                         <Route path='/form' component={Form}></Route>
+                        <Route path='/counter' component={Counter}></Route>
                       </Switch>
                     </div>
                   </div>

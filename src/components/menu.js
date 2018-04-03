@@ -37,6 +37,9 @@ class XMenu extends React.Component {
             <Menu.Item key="7" >
               <Link to="/toggle">toggle</Link>
             </Menu.Item>
+            <Menu.Item key="8" >
+              <Link to="/counter">购物车加减</Link>
+            </Menu.Item>
           </SubMenu>
           {/*<SubMenu key="sub2" title={<span><Icon type="laptop" />导航二</span>}>*/}
             {/*<Menu.Item key="5">选项5</Menu.Item>*/}

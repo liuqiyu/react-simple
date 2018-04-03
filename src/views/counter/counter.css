@@ -1,0 +1,12 @@
+.counter span, .counter button {
+        display: inline-block;
+        border: 1px solid #e1e1e1;
+  width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        vertical-align: middle;
+}
