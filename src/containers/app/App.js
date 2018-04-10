@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect  } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect  } from 'react-router-dom';
 import { Breadcrumb } from 'antd';
 import Loadable from 'react-loadable';
 import Menu from './../../components/menu';
