@@ -5,6 +5,8 @@
 
 import React from 'react';
 import './datalist.css';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 class Search extends React.Component {
   constructor (props) {
@@ -89,6 +91,11 @@ class Datalist extends React.Component {
     this.change = this.change.bind(this);
   }
   
+  componentDidMount() {
+    this.props.currentNavIndex('4');
+  }
+  
+  
   change(value) {
     this.setState({
       keyword: value,
@@ -122,4 +129,8 @@ class Datalist extends React.Component {
   }
 }
 
-export default Datalist;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Datalist);

@@ -4,6 +4,8 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 function Page(props) {
   if (props.isLogin) {
@@ -28,6 +30,10 @@ class Status extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   
+  componentDidMount() {
+    this.props.currentNavIndex('6');
+  }
+  
   handleClick() {
     this.setState(prevState => ({
       isLogin: !prevState.isLogin
@@ -46,4 +52,8 @@ class Status extends React.Component {
   }
 }
 
-export default Status;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Status);

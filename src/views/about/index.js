@@ -5,6 +5,8 @@
 
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 const Message = ({ match }) => (
   <div>
@@ -19,7 +21,7 @@ class About extends React.Component {
   }
   
   componentDidMount() {
-    console.log(this.props.match)
+    this.props.currentNavIndex('3');
   }
   
   render() {
@@ -39,4 +41,9 @@ class About extends React.Component {
   }
 }
 
-export default About;
+// export default About;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(About)

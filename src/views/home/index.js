@@ -7,10 +7,16 @@ import React from 'react';
 import { Button } from 'antd';
 import logo from './../../images/logo.svg';
 import './home.css';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 class Home extends React.Component {
   constructor (props) {
     super(props);
+  }
+  
+  componentDidMount() {
+    this.props.currentNavIndex('1');
   }
   
   render() {
@@ -32,4 +38,8 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Home);

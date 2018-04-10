@@ -4,6 +4,8 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 class Clock extends React.Component {
   constructor (props) {
@@ -13,7 +15,8 @@ class Clock extends React.Component {
     }
   }
   
-componentDidMount() {
+  componentDidMount() {
+    this.props.currentNavIndex('5');
     this.timer = setInterval(() => {
       this.setState({
         time: new Date(),
@@ -37,4 +40,9 @@ componentDidMount() {
   }
 }
 
-export default Clock;
+// export default Clock;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Clock);

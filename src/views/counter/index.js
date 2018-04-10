@@ -5,6 +5,8 @@
 
 import React from 'react';
 import './counter.css';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 class Counter extends React.Component {
   constructor (props) {
@@ -16,6 +18,11 @@ class Counter extends React.Component {
     this.reduce = this.reduce.bind(this);
     this.add = this.add.bind(this);
   }
+  
+  componentDidMount() {
+    this.props.currentNavIndex('8');
+  }
+  
   
   reduce() {
     this.setState({
@@ -40,4 +47,9 @@ class Counter extends React.Component {
   }
 }
 
-export default Counter;
+// export default Counter;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Counter);

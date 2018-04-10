@@ -6,6 +6,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './form.css'
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 class Form extends React.Component {
   constructor(props) {
@@ -28,6 +30,10 @@ class Form extends React.Component {
     this.change = this.change.bind(this);
     this.changeSelect = this.changeSelect.bind(this);
     this.submit = this.submit.bind(this);
+  }
+  
+  componentDidMount() {
+    this.props.currentNavIndex('2');
   }
   
   change(event) {
@@ -81,4 +87,10 @@ Form.propTypes = {
   name: PropTypes.array,
 }
 
-export default Form;
+// export default Form;
+
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Form)

@@ -4,6 +4,8 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux'
+import { currentNavIndex } from '../../store/action'
 
 class Toggle extends React.Component {
   constructor(props) {
@@ -13,6 +15,10 @@ class Toggle extends React.Component {
     }
     
     this.handleClick = this.handleClick.bind(this);
+  }
+  
+  componentDidMount() {
+    this.props.currentNavIndex('7');
   }
   
   handleClick() {
@@ -32,4 +38,8 @@ class Toggle extends React.Component {
   }
 }
 
-export default Toggle;
+export default connect(state => ({
+  text: state.text,
+}), {
+  currentNavIndex,
+})(Toggle);
