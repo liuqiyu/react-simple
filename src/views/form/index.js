@@ -52,6 +52,7 @@ class Form extends React.Component {
     event.preventDefault();
     console.log(this.state)
     alert(this.state.name + '你好！')
+    console.log(this.props.text);
   }
   
   render() {
